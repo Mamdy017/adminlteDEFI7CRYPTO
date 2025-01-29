@@ -1,0 +1,306 @@
+.content-wrapper, .container-fluid,.contents,.container {
+    background-color: #002b36;
+}
+.container-fluid .contents {
+    background-color: #002b36;
+    color: rgb(212, 210, 210);
+
+}
+/* Bouton principal */
+.btn-primary {
+    background-color: #00ffff;
+    color: #002b36;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    /* font-weight: bold; */
+    /* text-transform: uppercase; */
+    transition: all 0.3s ease-in-out;
+  }
+  .white-hr {
+    border-color: grey; /* Change la couleur de la bordure */
+    border-style: solid; /* Optionnel : assurez-vous que le style est solide */
+  }
+  
+  .btn-primary:hover {
+    background-color: #00e0e0;
+    box-shadow: 0px 0px 3px 1px #00ffff;
+    color: #002b36;
+
+  }
+  
+  .btn-primary:active {
+    background-color: #008f8f;
+  }
+  
+  /* Bouton secondaire */
+  .btn-scondary {
+    background-color: #002b36;
+    color: #ffffff;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    padding: 12px 24px;
+    /* text-transform: uppercase;
+    transition: all 0.3s ease-in-out; */
+  }
+  
+  .btn-secondary:hover {
+    color: #00ffff;
+    box-shadow: 0px 0px 6px 2px #00ffff;
+  }
+  
+  /* Bouton désactivé */
+  .btn-disabled {
+    background-color: #4c4c4c;
+    color: #c0c0c0;
+    border: none;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+  
+body {
+    font-family: font-family-sans-serif;
+    background-color: #fff;
+}
+
+p {
+    color: darken(#ccc, 10%);
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: font-family-sans-serif;
+}
+
+a {
+    transition: .3s all ease;
+    
+    &:hover {
+        text-decoration: none!important;
+    }
+}
+
+.content {
+    padding: 7rem 0;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.half, .half .container > .row {
+    height: 100vh;
+    min-height: 700px;
+}
+
+.bg {
+    @include media-breakpoint-down(md) {
+        height: 200px;
+    }
+}
+
+/* Masquer le carrousel sur les écrans md et plus petits */
+@media (max-width: 992px) {
+   .half .carousel-container {
+      display: none !important;
+    }
+  }
+  
+  /* Afficher le carrousel uniquement à partir de la taille lg (992px et plus grands) */
+  @media (min-width: 992px) {
+   .half .carousel-container {
+      display: block !important;
+    }
+  }
+  
+
+.contents {
+    background: #f6f7fc;
+}
+
+.contents, .bg {
+    /* width: 50%; */
+    
+    @include media-breakpoint-down(lg) {
+        width: 100%;
+    }
+    
+    .form-control {
+        border: none;
+        box-shadow: 0 1px 2px 0 rgba(black, .1);
+        border-radius: 4px;
+        height: 50px;
+        background: transparent;
+        border: 1px solid grey;
+        
+        &:active, &:focus {
+            outline: none;
+            box-shadow: 0 1px 2px 0 rgba(black, .1);
+        }
+    }
+}
+
+.bg {
+    background-size: cover;
+    background-position: center;
+}
+
+a {
+    color: #888;
+    text-decoration: underline;
+}
+
+.btn {
+    height: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.forgot-pass {
+    position: relative;
+    top: 2px;
+    font-size: 14px;
+}
+
+.control {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 14px;
+
+    .caption {
+        position: relative;
+        top: .2rem;
+        color: #888;
+    }
+}
+
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.control__indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    border-radius: 4px;
+}
+
+.control--radio .control__indicator {
+    border-radius: 50%;
+}
+
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+    background: #ccc;
+}
+
+.control input:checked ~ .control__indicator {
+    background: #00ffff;
+}
+
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+    background: lighten(00ffff, 5%);
+}
+
+.control input:disabled ~ .control__indicator {
+    background: #e6e6e6;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.control__indicator:after {
+    font-family: 'icomoon';
+    content: '\e5ca';
+    position: absolute;
+    display: none;
+    font-size: 16px;
+    transition: .3s all ease;
+}
+
+.control input:checked ~ .control__indicator:after {
+    display: block;
+    color: #fff;
+}
+
+.control--checkbox .control__indicator:after {
+    top: 50%;
+    left: 50%;
+    margin-top: -1px;
+    transform: translate(-50%, -50%);
+}
+
+.control--checkbox input:disabled ~ .control__indicator:after {
+    border-color: #7b7b7b;
+}
+
+.control--checkbox input:disabled:checked ~ .control__indicator {
+    background-color: #7e0cf5;
+    opacity: .2;
+}
+
+.flex-md-grow-1 {
+  flex: 1;
+}
+.flex-md-grow-2 {
+  flex: 2;
+}
+.caption{
+    font-weight: 400;
+    color: #777777;
+}
+input[type="checkbox"]:checked {
+    background-color: #008f8f; /* Couleur de fond rouge pour les cases cochées */
+    accent-color: #008f8f; /* Pour les navigateurs modernes */
+  }
+  
+  label {
+    cursor: pointer; /* Ajoute un pointeur lorsqu'on survole le label */
+  }
+  
+
+.carousel-inner img {
+    object-fit: cover;
+    height: 100%;
+    max-height: 100vh; /* Ajuste la hauteur */
+  }
+  .carousel-inner,.carousel-item{
+    height: 100vh;
+  }
+  .carousel-caption {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+
+  .carousel-item img {
+    filter: blur(1px); /* Ajustez la valeur pour augmenter ou diminuer le flou */
+  }
+  .carousel-indicators li {
+    width: 12px; /* Taille du cercle */
+    height: 12px; /* Taille du cercle */
+    border-radius: 50%; /* Forme circulaire */
+    background-color: #777777; /* Couleur par défaut des cercles */
+    margin: 0 5px; /* Espacement entre les cercles */
+  }
+  
+  .carousel-indicators .active {
+    background-color: white; /* Couleur du cercle actif */
+  }
+  p strong{
+    color: #777777;
+    font-weight: 700;
+    size: 12px;
+  }
